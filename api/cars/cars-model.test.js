@@ -54,11 +54,7 @@ describe('Cars model', () => {
                 "year": "2020"
             }
             const data = await Cars.update(1, updatedCar)
-            expect(data).toMatchObject({
-                "make": "Tesla",
-                "model": "Model S Plaid",
-                "year": "2020"
-            })
+            expect(data).toMatchObject(updatedCar)
         })
     })
 })

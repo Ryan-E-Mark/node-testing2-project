@@ -16,8 +16,8 @@ async function insert(car) {
 }
 
 async function update(id, car) {
-    const [updatedCar] = await db('cars').where('id', id).update(car)
-    return db('cars').where('id', updatedCar)
+    const updatedCar = await db('cars').where('id', id).update(car)
+    return await db('cars').where('id', updatedCar).first()
 }
 
 module.exports = {
